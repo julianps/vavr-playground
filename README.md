@@ -68,13 +68,16 @@ List node consisting of the value and the pointer (tail) to the next node.
 
 ### Option
 
-## Predicates
+In the test OptionTest you will see that the usage of Option can lead to a NPE.
+In Optional, a call to map() that results in a null will result in an empty Optional. 
+In Vavr, it would result in a Some(null) that can then lead to a NullPointerException.
 
-### AnyOf
-
-## Tuples
-
-### Tuple2
+Option forces you to pay attention to possible occurrences of null and deal with them 
+accordingly instead of unknowingly accepting them.
+Optional adheres to the requirement of a monad to maintain computational context.
+Calling map() on a Some will result in a Some, and calling map() on a None will result in a None. 
+In the Java Optional example above, that context changed from a Some to a None.
+The correct way to deal with occurrences of null is to use flatMap
 
 ## Links:
 
