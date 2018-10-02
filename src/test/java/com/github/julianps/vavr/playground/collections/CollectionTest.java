@@ -4,7 +4,6 @@ import io.vavr.control.Option;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
@@ -17,7 +16,6 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIOException;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
@@ -134,7 +132,6 @@ public class CollectionTest {
     @Test
     @DisplayName("Show that the Option(none) disappear when flat-mapping")
     public void testFlatteningOfOptionNone() throws Exception {
-
 
         final io.vavr.collection.List<Option<FamilyMember>> family = io.vavr.collection.List.of(
                 Option.of(FamilyMember.of(NameWrapper.of("Lisa"))),
